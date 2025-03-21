@@ -1,59 +1,45 @@
-# MapasApp
+# Link Documetacion
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.0.
+* - https://angular.dev/guide/signals/resource
+* - https://angular.dev/api/core/rxjs-interop/rxResource 
+* - https://gist.github.com/Klerith/aa4fa691df78588203d4223e747e7925
 
-## Development server
 
-To start a local development server, run:
+# Crear Projecto npx @angular/cli@19.0.0 new <nombre-project> 
 
-```bash
-ng serve
+# NOTA IMPORTANTE
+
+```Para que funcione daisyui se debe usar la misma version de node de este pojecto
+  package.json
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+# Instalar paquetes Variable de entorno
+```
+* * - ng g environments
+* * - npm i -D dotenv
+* * - crear .env
+* * Crear Script De Ejecucion de Variable de Entorno
+* * - scripts/set-envs.js
+* * - node ./scripts/set-envs.js  | npm run set-envs
+```
+# Instalar paquetes Map Box
+```
+* * - npm install --save mapbox-gl
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+# Importar Diseño Map Box (index.html) 
+```
+<link 
+    href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" 
+    rel="stylesheet" />
 ```
 
-## Building
+# Agregar Comando en el archivo angular.json (evitar problema de build)
 
-To build the project run:
-
-```bash
-ng build
+```
+"allowedCommonJsDependencies": ["mapbox-gl"]
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+"budgets": [{"maximumWarning": "1MB","maximumError": "3MB"}]
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
